@@ -54,8 +54,8 @@ db_schema:
     title: Users
 dependencies: []
 metadata: {description: Web Store for Advanced Web Design, title: AWD Web Store Remake}
-name: AWD Web Store
-package_name: AWD_Web_Store
+name: AWD Web Store Checkout
+package_name: AWD_Web_Store_Checkout
 renamed: true
 runtime_options:
   client_version: '3'
