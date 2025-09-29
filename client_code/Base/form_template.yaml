@@ -1,0 +1,31 @@
+components:
+- components: []
+  layout_properties: {slot: default}
+  name: content_panel
+  properties: {col_widths: '{}'}
+  type: ColumnPanel
+- components:
+  - data_bindings: []
+    event_bindings: {click: my_courses_click}
+    layout_properties: {}
+    name: my_courses
+    properties: {icon: 'fa:book', role: null, text: My Courses, visible: false}
+    type: Link
+  - event_bindings: {click: sign_in_click}
+    layout_properties: {}
+    name: sign_in
+    properties: {icon: 'fa:user', text: Sign In}
+    type: Link
+  layout_properties: {slot: nav-right}
+  name: navbar_links
+  properties: {}
+  type: FlowPanel
+- event_bindings: {click: title_click}
+  layout_properties: {slot: top-left-btn}
+  name: title
+  properties: {text: AWD Web Store}
+  type: Link
+container:
+  properties: {html: '@theme:standard-page.html'}
+  type: HtmlTemplate
+is_package: true

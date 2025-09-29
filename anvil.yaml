@@ -1,7 +1,61 @@
 allow_embedding: false
+db_schema:
+  courses:
+    client: none
+    columns:
+    - admin_ui: {order: 0, width: 200}
+      name: name
+      type: string
+    - admin_ui: {order: 1, width: 200}
+      name: price
+      type: number
+    - admin_ui: {order: 2, width: 200}
+      name: created
+      type: datetime
+    - admin_ui: {order: 3, width: 200}
+      name: description
+      type: string
+    - admin_ui: {order: 4, width: 200}
+      name: image
+      type: media
+    - admin_ui: {order: 5, width: 200}
+      name: id_name
+      type: string
+    server: full
+    title: Courses
+  users:
+    client: none
+    columns:
+    - admin_ui: {order: 0, width: 200}
+      name: email
+      type: string
+    - admin_ui: {order: 1, width: 200}
+      name: enabled
+      type: bool
+    - admin_ui: {order: 2, width: 200}
+      name: last_login
+      type: datetime
+    - admin_ui: {order: 3, width: 200}
+      name: password_hash
+      type: string
+    - admin_ui: {order: 4, width: 200}
+      name: n_password_failures
+      type: number
+    - admin_ui: {order: 5, width: 200}
+      name: confirmed_email
+      type: bool
+    - admin_ui: {order: 6, width: 200}
+      name: remembered_logins
+      type: simpleObject
+    - admin_ui: {order: 7, width: 200}
+      name: purchased_courses
+      type: simpleObject
+    server: full
+    title: Users
 dependencies: []
-name: M3 App 1
-package_name: M3_App_1
+metadata: {description: Web Store for Advanced Web Design, title: AWD Web Store Remake}
+name: AWD Web Store
+package_name: AWD_Web_Store
 renamed: true
 runtime_options:
   client_version: '3'
@@ -12,4 +66,14 @@ services:
 - client_config: {}
   server_config: {}
   source: /runtime/services/tables.yml
-startup_form: Form1
+- client_config: {allow_remember_me: true, allow_signup: true, confirm_email: true, enable_automatically: true, remember_me_days: 30, require_secure_passwords: true, use_email: true, use_facebook: true, use_google: true}
+  server_config: {user_table: users}
+  source: /runtime/services/anvil/users.yml
+- client_config: {}
+  server_config: {}
+  source: /runtime/services/facebook.yml
+- client_config: {}
+  server_config: {}
+  source: /runtime/services/google.yml
+startup: {module: Base, type: form}
+startup_form: null
