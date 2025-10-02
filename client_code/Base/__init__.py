@@ -37,7 +37,7 @@ class Base(BaseTemplate):
       email = user["email"]
       self.sign_in.text = email
     else:
-      self.sign_in_text = "Sign In" 
+      self.sign_in.text = "Sign In" 
 
     self.toggle_my_courses_link()
       
