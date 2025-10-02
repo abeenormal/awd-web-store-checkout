@@ -20,10 +20,7 @@ class Courses(CoursesTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
     self.load_courses()
-
-    
-    
-    # Any code you write here will run before the form opens.
+      # Any code you write here will run before the form opens.
   def back(self):
     self.content_panel.clear()
     self.load_courses()
